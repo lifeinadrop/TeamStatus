@@ -1,0 +1,6 @@
+﻿services:
+  teamstatus:
+    image: teamstatus
+    build:
+      context: .
+      dockerfile: TeamStatus/Dockerfile

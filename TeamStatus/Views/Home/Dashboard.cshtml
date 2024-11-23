@@ -1,0 +1,31 @@
+@model IEnumerable<TeamStatusData.Models.User>
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row row-cols-xl-5 row-cols-md-3 row-cols-sm-6 row-cols-xs-12">
+        @foreach (var user in @Model)
+        {
+            <div class="col">
+                <div class="card mb-4 d-flex flex-column">
+                    <img src="profile-circle-svgrepo-com.svg" class="card-img-top" alt="@user.Name">
+                    <div class="card-body flex-grow-1">
+                        <h5 class="card-title">@user.Name</h5>
+                        <p class="card-text">@user.Status</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+</body>
+</html>
