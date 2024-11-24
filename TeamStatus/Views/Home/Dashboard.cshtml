@@ -1,3 +1,5 @@
+@using Microsoft.Extensions.FileSystemGlobbing
+@using TeamStatusData.Enums
 @model IEnumerable<TeamStatusData.Models.User>
 
 @{
@@ -22,6 +24,15 @@
                         <h5 class="card-title">@user.Name</h5>
                         <p class="card-text">@user.Status</p>
                     </div>
+                    <form method="post" asp-action="UpdateUserStatus" asp-route-userId="@user.Id">
+                        <input type="hidden" asp-for="@user.Id"/>
+                        <div class="form-group">
+                            <label asp-for="@user.Status"></label>
+                            <select asp-for="@user.Status" asp-items="Html.GetEnumSelectList<UserStatus>()"
+                                    class="form-control"></select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Status</button>
+                    </form>
                 </div>
             </div>
         }

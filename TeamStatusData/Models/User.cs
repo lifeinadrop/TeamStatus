@@ -21,5 +21,5 @@ public class User
     public string Title { get; set; } = string.Empty;
 
     [Required, DefaultValue(UserStatus.Available), Column("status")]
-    public UserStatus Status { get; set; } = UserStatus.Available;
+    public UserStatus Status { get; set; }
 }

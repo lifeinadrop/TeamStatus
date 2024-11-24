@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using TeamStatus.Models;
 using TeamStatus.Services;
 using TeamStatusData.Data;
+using TeamStatusData.Enums;
+using TeamStatusData.Models;
 
 namespace TeamStatus.Controllers;
 
@@ -32,6 +34,19 @@ public class HomeController : Controller
     {
         var users = _dataService.GetUsers();
         return View(users);
+    }
+    
+    [HttpPost("dashboard/{userId:long}/update-status")]
+    public IActionResult UpdateUserStatus(long userId, UserStatus userStatus)
+    {
+        if (!ModelState.IsValid)
+        {
+            return RedirectToAction(nameof(Dashboard));
+        }
+	    
+        _dataService.UpdateUserStatus(userId, userStatus);
+	    
+        return RedirectToAction(nameof(Dashboard));
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
