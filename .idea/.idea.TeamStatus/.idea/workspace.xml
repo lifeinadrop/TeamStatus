@@ -9,12 +9,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="666cc32c-631e-4b1d-831a-876d8d863e02" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/TeamStatus/Hubs/UserStatusHub.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TeamStatus/Views/Home/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TeamStatus/wwwroot/js/signalr/dist/browser/signalr.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TeamStatus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TeamStatus/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamStatus/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamStatus/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamStatus/Services/DataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/Services/DataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamStatus/TeamStatus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/TeamStatus.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamStatus/Views/Home/Dashboard.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/Views/Home/Dashboard.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamStatusData/Class1.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamStatusData/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatusData/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamStatusData/TeamStatusData.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatusData/TeamStatusData.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +28,13 @@
   </component>
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,6 +70,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -149,7 +162,7 @@
       <workItem from="1732381691996" duration="868000" />
       <workItem from="1732382567539" duration="3686000" />
       <workItem from="1732403646979" duration="5325000" />
-      <workItem from="1732412251530" duration="938000" />
+      <workItem from="1732412251530" duration="7949000" />
     </task>
     <servers />
   </component>
@@ -164,19 +177,23 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TeamStatus/Controllers/HomeController.cs</url>
-          <line>41</line>
-          <properties documentPath="$PROJECT_DIR$/TeamStatus/Controllers/HomeController.cs" containingFunctionPresentation="Method 'UpdateUserStatus'">
+          <url>file://$PROJECT_DIR$/TeamStatus/Hubs/UserStatusHub.cs</url>
+          <line>13</line>
+          <properties documentPath="$PROJECT_DIR$/TeamStatus/Hubs/UserStatusHub.cs" containingFunctionPresentation="Method 'UpdateUserStatus'">
             <startOffsets>
-              <option value="992" />
+              <option value="355" />
             </startOffsets>
             <endOffsets>
-              <option value="1016" />
+              <option value="419" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

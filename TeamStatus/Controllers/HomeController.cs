@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using TeamStatus.Hubs;
 using TeamStatus.Models;
 using TeamStatus.Services;
 using TeamStatusData.Data;
@@ -12,11 +13,13 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly DataService _dataService;
+    private readonly UserStatusHub _userStatusHub;
 
     public HomeController(ILogger<HomeController> logger, DataContext dataContext)
     {
         _logger = logger;
         _dataService = new DataService(dataContext);
+        _userStatusHub = new UserStatusHub(_dataService);
     }
 
     public IActionResult Index()
@@ -37,14 +40,14 @@ public class HomeController : Controller
     }
     
     [HttpPost("dashboard/{userId:long}/update-status")]
-    public IActionResult UpdateUserStatus(long userId, UserStatus userStatus)
+    public async Task<IActionResult> UpdateUserStatus(long userId, UserStatus userStatus)
     {
         if (!ModelState.IsValid)
         {
             return RedirectToAction(nameof(Dashboard));
         }
-	    
-        _dataService.UpdateUserStatus(userId, userStatus);
+        
+        await _userStatusHub.UpdateUserStatus(userId, userStatus);
 	    
         return RedirectToAction(nameof(Dashboard));
     }

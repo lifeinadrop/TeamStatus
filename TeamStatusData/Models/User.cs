@@ -20,6 +20,6 @@ public class User
     [Column("title")]
     public string Title { get; set; } = string.Empty;
 
-    [Required, DefaultValue(UserStatus.Available), Column("status")]
+    [Required, Column("status")]
     public UserStatus Status { get; set; }
 }

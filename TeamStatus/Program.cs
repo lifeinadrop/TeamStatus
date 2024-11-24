@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TeamStatus;
+using TeamStatus.Hubs;
+using TeamStatus.Services;
 using TeamStatusData.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +18,11 @@ builder.Services
         options.UseNpgsql(builder.Configuration
             .GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<DataService>();
+
+// Initialize SignlaR 
+builder.Services.AddSignalR();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -28,10 +35,10 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
 app.UseAuthorization();
-
+app.MapHub<UserStatusHub>("/UserStatusHub");
 app.MapStaticAssets();
+
 
 app.MapControllerRoute(
         name: "default",

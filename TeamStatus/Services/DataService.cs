@@ -16,7 +16,7 @@ public class DataService
 
     public List<User> GetUsers()
     {
-        return _dataContext.Users.ToList();
+        return _dataContext.Users.OrderBy(u => u.Id).ToList();
     }
 
     public User GetUserById(long userId)

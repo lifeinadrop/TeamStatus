@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "signalr": "^2.4.3",
+    "signalr-asp-net": "^1.0.3"
+  }
+}
