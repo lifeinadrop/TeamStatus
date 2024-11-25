@@ -22,6 +22,8 @@ builder.Services.AddScoped<DataService>();
 
 // Initialize SignlaR 
 builder.Services.AddSignalR();
+builder.Services.AddScoped<UserStatusHub>();
+builder.Services.AddScoped<StatusUpdateService>();
 
 var app = builder.Build();
 
@@ -37,13 +39,12 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();
 app.MapHub<UserStatusHub>("/UserStatusHub");
-app.MapStaticAssets();
+app.UseStaticFiles();
 
 
 app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
 app.Run();

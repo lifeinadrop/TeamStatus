@@ -48,7 +48,7 @@
 
     connection.on("ReceiveUserStatusUpdate", (userId, status) => {
         // Find the element for the updated user and update the status text
-        const userCard = document.getElementById(`user-${userId}`); 
+        const userCard = document.getElementById(`user-${userId}`);
         if (userCard) {
             const statusElement = userCard.querySelector('.card-text');
             statusElement.textContent = status;
@@ -57,28 +57,13 @@
 
     connection.start().catch(err => console.error(err.toString()));
 
-    console.log("SignalR connection state:", connection.state);
-    connection.invoke("UpdateUserStatus", userId, status)
-        .catch(err => console.error(err.toString()));
-
-    connection.invoke("UpdateUserStatus", userId, status)
-        .catch(err => {
-            console.error("Error invoking UpdateUserStatus:", err);
-            // Consider displaying an error message to the user
-        });
-
     // Add an event listener to each form to send the updated status to the server
     const forms = document.querySelectorAll('form');
+    console.log(forms)
     forms.forEach(form => {
         form.addEventListener('submit', function (event) {
-            event.preventDefault();
- // Prevent default form submission
-
             const userId = this.querySelector('input[type="hidden"]').value;
             const status = this.querySelector('select[name="UserStatus"]').value;
-
-            connection.invoke("UpdateUserStatus", userId, status)
-                .catch(err => console.error(err.toString()));
         });
     });
 </script>

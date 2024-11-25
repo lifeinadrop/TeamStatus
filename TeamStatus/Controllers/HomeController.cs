@@ -13,13 +13,13 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly DataService _dataService;
-    private readonly UserStatusHub _userStatusHub;
+    private readonly StatusUpdateService _statusUpdateService;
 
-    public HomeController(ILogger<HomeController> logger, DataContext dataContext)
+    public HomeController(ILogger<HomeController> logger, DataContext dataContext, StatusUpdateService statusUpdateService)
     {
         _logger = logger;
         _dataService = new DataService(dataContext);
-        _userStatusHub = new UserStatusHub(_dataService);
+        _statusUpdateService = statusUpdateService;
     }
 
     public IActionResult Index()
@@ -47,7 +47,7 @@ public class HomeController : Controller
             return RedirectToAction(nameof(Dashboard));
         }
         
-        await _userStatusHub.UpdateUserStatus(userId, userStatus);
+        await _statusUpdateService.UpdateUserStatusAsync(userId, userStatus);
 	    
         return RedirectToAction(nameof(Dashboard));
     }

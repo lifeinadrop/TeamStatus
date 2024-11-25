@@ -9,16 +9,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="666cc32c-631e-4b1d-831a-876d8d863e02" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TeamStatus/Hubs/UserStatusHub.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TeamStatus/Views/Home/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TeamStatus/wwwroot/js/signalr/dist/browser/signalr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TeamStatus/Services/StatusUpdateService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TeamStatus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TeamStatus/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamStatus.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamStatus/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamStatus/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamStatus/Services/DataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/Services/DataService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamStatus/TeamStatus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/TeamStatus.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamStatus/Views/Home/Dashboard.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/Views/Home/Dashboard.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamStatusData/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatusData/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamStatus/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamStatusData/Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatusData/Data/DataContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamStatusData/TeamStatusData.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatusData/TeamStatusData.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +39,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/db7395f4add94e6d10e515b3e55373f2821f8323de7dc8e314d78feefacf5584/ActionMethodExecutor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b69381e161004f4187d1632ec32ef63c14200/d3/41386c71/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TeamStatusData/Data/DataContext.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
@@ -70,8 +69,13 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.TeamStatus: http">
@@ -188,6 +192,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TeamStatus/Controllers/HomeController.cs</url>
+          <line>49</line>
+          <properties documentPath="$PROJECT_DIR$/TeamStatus/Controllers/HomeController.cs" containingFunctionPresentation="Method 'UpdateUserStatus'">
+            <startOffsets>
+              <option value="1301" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1370" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
