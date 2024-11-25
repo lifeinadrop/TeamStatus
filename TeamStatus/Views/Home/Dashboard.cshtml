@@ -59,11 +59,16 @@
 
     // Add an event listener to each form to send the updated status to the server
     const forms = document.querySelectorAll('form');
-    console.log(forms)
     forms.forEach(form => {
-        form.addEventListener('submit', function (event) {
+        form.addEventListener('submit', async function (event) {
             const userId = this.querySelector('input[type="hidden"]').value;
             const status = this.querySelector('select[name="UserStatus"]').value;
+
+            try {
+                await connection.invoke("UpdateUserStatus", userId, status);
+            } catch (err) {
+                console.error(err.toString());
+            }
         });
     });
 </script>

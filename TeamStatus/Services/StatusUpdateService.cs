@@ -15,7 +15,7 @@ public class StatusUpdateService
         _hubContext = hubContext;
     }
 
-    public async Task UpdateUserStatusAsync(long userId, UserStatus status)
+    public async Task UpdateUserStatus(long userId, UserStatus status)
     {
         _dataService.UpdateUserStatus(userId, status); 
         await _hubContext.Clients.All.SendAsync("UpdateUserStatus", userId, status);

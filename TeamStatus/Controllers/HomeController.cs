@@ -47,7 +47,7 @@ public class HomeController : Controller
             return RedirectToAction(nameof(Dashboard));
         }
         
-        await _statusUpdateService.UpdateUserStatusAsync(userId, userStatus);
+        await _statusUpdateService.UpdateUserStatus(userId, userStatus);
 	    
         return RedirectToAction(nameof(Dashboard));
     }
