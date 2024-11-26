@@ -10,11 +10,8 @@
   <component name="ChangeListManager">
     <list default="true" id="666cc32c-631e-4b1d-831a-876d8d863e02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TeamStatus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TeamStatus/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamStatus.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamStatus/TeamStatus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/TeamStatus.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamStatus/Services/StatusUpdateService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/Services/StatusUpdateService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamStatus/Views/Home/Dashboard.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/Views/Home/Dashboard.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamStatus/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatus/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamStatusData/TeamStatusData.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TeamStatusData/TeamStatusData.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +65,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.TeamStatus: http.executor": "Debug",
+    ".NET Launch Settings Profile.TeamStatus: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "feature/update-user-status",
@@ -178,7 +175,7 @@
       <workItem from="1732412251530" duration="7949000" />
       <workItem from="1732591692769" duration="97000" />
       <workItem from="1732591801890" duration="133000" />
-      <workItem from="1732591943370" duration="680000" />
+      <workItem from="1732591943370" duration="3083000" />
     </task>
     <servers />
   </component>
@@ -207,13 +204,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/TeamStatus/Services/StatusUpdateService.cs</url>
-          <line>19</line>
+          <line>20</line>
           <properties documentPath="$PROJECT_DIR$/TeamStatus/Services/StatusUpdateService.cs" containingFunctionPresentation="Method 'UpdateUserStatus'">
             <startOffsets>
-              <option value="527" />
+              <option value="553" />
             </startOffsets>
             <endOffsets>
-              <option value="573" />
+              <option value="599" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="9" />

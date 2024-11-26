@@ -9,7 +9,40 @@
 
 <html>
 <head>
-    <title>title</title>
+    <title>Dashboard</title>
+    <style>
+        .pulsing-light {
+
+            /* Optional styling for the alert container */
+
+        }
+
+        .pulsing-indicator {
+
+            display: inline-block;
+
+            width: 10px;
+
+            height: 10px;
+
+            background-color: red;
+
+            border-radius: 50%;
+
+            animation: pulse 1s ease-in-out infinite;
+
+        }
+
+        @@keyframes pulse {
+
+            0% { opacity: 1; }
+
+            50% { opacity: 0.5; }
+
+            100% { opacity: 1; }
+
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -22,16 +55,27 @@
                     <div class="card-body flex-grow-1">
                         <h5 class="card-title">@user.Name</h5>
                         <p class="card-text">@user.Status</p>
+                        @if (@user.Status == UserStatus.Meeting)
+                        {
+                            <span class="pulsing-indicator"></span>
+                        }
+                        <form method="post">
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <label asp-for="@user.Status">Change Status: </label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <select asp-items="Html.GetEnumSelectList<UserStatus>()"
+                                            class="form-control" name="UserStatus">
+                                        <option value="">---</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button asp-action="UpdateUserStatus" asp-route-userId="@user.Id" type="submit"
+                                    class="btn btn-primary">Update Status
+                            </button>
+                        </form>
                     </div>
-                    <form method="post">
-                        <input type="hidden" asp-for="@user.Id"/>
-                        <div class="form-group">
-                            <label asp-for="@user.Status"></label>
-                            <select asp-for="@user.Status" asp-items="Html.GetEnumSelectList<UserStatus>()"
-                                    class="form-control" name="UserStatus"></select>
-                        </div>
-                        <button asp-action="UpdateUserStatus" asp-route-userId="@user.Id" type="submit" class="btn btn-primary">Update Status</button>
-                    </form>
                 </div>
             </div>
         }
@@ -52,6 +96,13 @@
         if (userCard) {
             const statusElement = userCard.querySelector('.card-text');
             statusElement.textContent = status;
+        }
+
+        // Update the dropdown value in the corresponding form
+        const userForm = document.querySelector(`#user-${userId} form`);
+        if (userForm) {
+            const statusSelect = userForm.querySelector('select[name="UserStatus"]');
+            statusSelect.value = status; // Set the selected value to the new status
         }
     });
 
