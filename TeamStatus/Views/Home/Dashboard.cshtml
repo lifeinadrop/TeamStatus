@@ -46,7 +46,7 @@
         .withUrl("/userStatusHub")
         .build();
 
-    connection.on("ReceiveUserStatusUpdate", (userId, status) => {
+    connection.on("UpdateUserStatus", (userId, status) => {
         // Find the element for the updated user and update the status text
         const userCard = document.getElementById(`user-${userId}`);
         if (userCard) {
