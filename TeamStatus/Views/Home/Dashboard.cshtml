@@ -12,35 +12,40 @@
     <title>Dashboard</title>
     <style>
         .pulsing-light {
-
             /* Optional styling for the alert container */
-
         }
 
-        .pulsing-indicator {
-
+        .pulsing-indicator {  /* Base class */
             display: inline-block;
-
             width: 10px;
-
             height: 10px;
-
-            background-color: red;
-
             border-radius: 50%;
+            animation: pulse 1.5s ease-in-out infinite;
+            border: 1px solid #000000;
+        }
 
-            animation: pulse 1s ease-in-out infinite;
+        .pulsing-red-indicator {
+            background-color: #ff0000;
+        }
 
+        .pulsing-green-indicator {
+            background-color: #008000;
+        }
+
+        .pulsing-yellow-indicator {
+            background-color: #ffff00;
         }
 
         @@keyframes pulse {
-
-            0% { opacity: 1; }
-
-            50% { opacity: 0.5; }
-
-            100% { opacity: 1; }
-
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -54,15 +59,32 @@
                     <img src="profile-circle-svgrepo-com.svg" class="card-img-top" alt="@user.Name">
                     <div class="card-body flex-grow-1">
                         <h5 class="card-title">@user.Name</h5>
-                        <p class="card-text">@user.Status</p>
-                        @if (@user.Status == UserStatus.Meeting)
-                        {
-                            <span class="pulsing-indicator"></span>
-                        }
+                        <div class="group row">
+                            <div class="col-sm-6">
+                                <p class="card-text">@user.Status</p>
+                            </div>
+                            <div class="col-sm-6">
+                                @switch (@user.Status)
+                                {
+                                    case UserStatus.Available:
+                                        <span class="pulsing-indicator pulsing-green-indicator"></span>
+                                        break;
+                                    case UserStatus.Meeting:
+                                        <span class="pulsing-indicator pulsing-red-indicator"></span>
+                                        break;
+                                        case UserStatus.Away:
+                                        <span class="pulsing-indicator pulsing-yellow-indicator"></span>
+                                        break;
+                                    default:
+                                        <span></span>
+                                        break;
+                                }
+                            </div>
+                        </div>
                         <form method="post">
                             <div class="form-group row">
                                 <div class="col-sm-6">
-                                    <label asp-for="@user.Status">Change Status: </label>
+                                    <label asp-for="@user.Status">Update: </label>
                                 </div>
                                 <div class="col-sm-6">
                                     <select asp-items="Html.GetEnumSelectList<UserStatus>()"
